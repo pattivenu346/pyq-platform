@@ -7,9 +7,9 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+fa
 
-
-/coverage gg
+/coverage
 
 
 /.next/
