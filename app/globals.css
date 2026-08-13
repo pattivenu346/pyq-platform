@@ -1,26 +1,158 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0b1020;
+  color: #e8edff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.muted {
+  color: #9eaccb;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.colleges {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.grid.pyq,
+.grid.exam {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.card {
+  border: 1px solid #2c3557;
+  border-radius: 14px;
+  padding: 16px;
+  background: #121935;
+}
+
+.card h3,
+.card h4,
+.card p {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #1f2a4f;
+  border: 1px solid #34457f;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.button,
+button,
+select,
+input {
+  border-radius: 10px;
+  border: 1px solid #334173;
+  background: #101831;
+  color: #e8edff;
+  padding: 10px 12px;
+}
+
+.button:hover,
+button:hover {
+  border-color: #5d74ca;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.headerCard {
+  margin-bottom: 16px;
+}
+
+.viewerLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.pdfMock {
+  min-height: 520px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #1a2344, #0f1630);
+  border: 1px solid #2e3c69;
+  padding: 24px;
+}
+
+.rightPanel {
+  border: 1px solid #2c3557;
+  border-radius: 12px;
+  padding: 16px;
+  background: #10162c;
+}
+
+.adminStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.toolItem {
+  border-left: 3px solid #6ea8fe;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 880px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .viewerLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .adminStats {
+    grid-template-columns: 1fr 1fr;
+  }
 }
